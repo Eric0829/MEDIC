@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "defaults": {
+    "iterations": 1,
+    "interval_seconds": 0.0
+  },
+  "targets": [
+    {
+      "name": "local-system",
+      "target": "system",
+      "patient_id": "local-system",
+      "watch_processes": [
+        "python"
+      ],
+      "disk_path": "C:\\",
+      "enabled": true
+    },
+    {
+      "name": "local-python-service",
+      "target": "python-service",
+      "patient_id": "local-python-service",
+      "service_url": "http://127.0.0.1:8000",
+      "source_root": ".",
+      "health_path": "/health",
+      "enabled": false
+    }
+  ]
+}

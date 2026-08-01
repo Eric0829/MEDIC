@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "agent_name": "MEDIC",
+  "agent_kind": "external_control_agent",
+  "operating_mode": "observe_judge_approve",
+  "default_execution_mode": "observe_only",
+  "auto_execute_enabled": false,
+  "requires_human_approval_for_contract_changes": true,
+  "mission": [
+    "observe configured patients and services",
+    "diagnose symptoms and propose prescriptions",
+    "route risky actions through policy, approval, audit, and trace",
+    "preserve evidence for causal debugging and self-control review"
+  ],
+  "allowed_without_approval": [
+    "collect_vitals",
+    "diagnose",
+    "prescribe_recommendation",
+    "policy_review",
+    "second_opinion_review",
+    "write_audit_event",
+    "write_pipeline_trace",
+    "write_observe_summary",
+    "write_alert",
+    "write_incident_case",
+    "run_harness",
+    "run_observe_daemon",
+    "read_control_state"
+  ],
+  "approval_required_treatments": [
+    "patch_code",
+    "restart",
+    "rollback",
+    "config_change",
+    "quarantine",
+    "fine_tune_trigger",
+    "manual_intervention"
+  ],
+  "forbidden_without_explicit_human_approval": [
+    "delete_evidence_logs_without_explicit_human_approval",
+    "compact_evidence_logs_without_archive_and_explicit_human_approval",
+    "execute_patient_treatment_outside_control_gateway",
+    "enable_medium_or_high_risk_auto_execution_without_contract_change",
+    "modify_policy_or_contract_without_audit"
+  ],
+  "required_controls": [
+    "ControlGateway",
+    "ApprovalQueue",
+    "AuditLog",
+    "PipelineTrace",
+    "IncidentQueue",
+    "SecondOpinionGate",
+    "ControlledTreatmentRunner",
+    "ControlledPatientRegistry"
+  ],
+  "evidence_must_preserve": [
+    "control_state/approval_queue.jsonl",
+    "control_state/audit.jsonl",
+    "control_state/pipeline_trace.jsonl",
+    "control_state/incident_cases.jsonl"
+  ],
+  "success_criteria": [
+    "all medium and high risk treatments pass through ControlGateway",
+    "approval queue has no stale pending request before execution",
+    "audit and trace records link decisions to prescriptions",
+    "observe daemon alerts are linked to incident cases",
+    "stale active incidents are triaged before execution is enabled",
+    "post-execution verification records recovery or failure"
+  ],
+  "operator_notes": [
+    "MEDIC is an agent, but not an unrestricted autonomous repair agent.",
+    "Automatic repair requires an explicit contract change and fresh harness baseline."
+  ]
+}

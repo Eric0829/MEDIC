@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "observe_config": "observe_targets.example.json",
+  "interval_seconds": 60.0,
+  "supervisor_cycles": 1,
+  "supervisor_cycle_interval_seconds": 0.0,
+  "max_cycles": 0,
+  "stop_on_blocked": false,
+  "latest_path": "../observe_runs/observe_daemon_latest.json",
+  "alert_path": "../observe_runs/observe_alerts.jsonl",
+  "incident_path": "../control_state/incident_cases.jsonl",
+  "incident_stale_after_seconds": 86400.0
+}
