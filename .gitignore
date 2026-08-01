@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# Generated control state, traces, logs, and benchmark summaries
+control_state/
+harness_runs/
+second_opinion_runs/
+soak_runs/
+observe_runs/
+benchmark_runs/
+*.log
+*.sqlite
+*.db
