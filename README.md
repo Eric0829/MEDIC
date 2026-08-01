@@ -67,11 +67,12 @@ python medic_control.py --daily-check
 python medic_control.py --benchmark-suite
 ```
 
-For the repeated observer, see [`scripts/README.md`](scripts/README.md). Runtime evidence is written to ignored directories such as `control_state/`, `observe_runs/`, and `benchmark_runs/`; do not commit those generated files.
+See [`docs/DEMO.md`](docs/DEMO.md) for a two-command walkthrough of observation, approval queuing, and pre-execution blocking. For the repeated observer, see [`scripts/README.md`](scripts/README.md). Runtime evidence is written to ignored directories such as `control_state/`, `observe_runs/`, and `benchmark_runs/`; do not commit those generated files.
 
 ## Documentation
 
 - [`docs/MEDIC_OVERVIEW.md`](docs/MEDIC_OVERVIEW.md) — architecture and safety contract.
+- [`docs/DEMO.md`](docs/DEMO.md) — a short local walkthrough with representative output.
 - [`docs/STATUS.md`](docs/STATUS.md) — current maturity and known limitations.
 - [`docs/OPERATIONS.md`](docs/OPERATIONS.md) — daily checks and daemon operations.
 - [`docs/BENCHMARKS.md`](docs/BENCHMARKS.md) — benchmark stages and interpretation.
