@@ -16,3 +16,5 @@ jobs:
         run: python -m compileall -q .
       - name: Check role contract
         run: python medic_control.py --role-contract --json
+      - name: Run diagnostic smoke
+        run: python medic_control.py --diagnostic-smoke --json

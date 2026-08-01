@@ -62,6 +62,7 @@ From this repository root:
 
 ```powershell
 python medic_control.py --role-contract
+python medic_control.py --version
 python medic_control.py --diagnostic-smoke
 python medic_control.py --daily-check
 python medic_control.py --benchmark-suite

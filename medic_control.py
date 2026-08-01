@@ -46,6 +46,8 @@ from control.storage_health import ControlStorageHealth
 from control.treatment_runner import ControlledTreatmentRunner
 from patient_registry.base_patient import PatientType, Prescription, TreatmentResult, TreatmentType, Vitals
 
+MEDIC_VERSION = "0.1.0-alpha"
+
 
 class _ControlSmokePatient:
     def __init__(self) -> None:
@@ -95,6 +97,12 @@ def main() -> int:
         "--root",
         default=str(Path(__file__).resolve().parent),
         help="MEDIC root directory",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {MEDIC_VERSION}",
+        help="show the MEDIC version and exit",
     )
     parser.add_argument(
         "--json",
